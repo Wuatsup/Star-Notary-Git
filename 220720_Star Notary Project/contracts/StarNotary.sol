@@ -14,6 +14,11 @@ contract StarNotary is ERC721 {
     // name: Is a short name to your token
     // symbol: Is a short string like 'USD' -> 'American Dollar'
 
+    constructor() ERC721("StarNotary", "STN") {}
+
+    //string public name = "StarNotary";
+    //string public symbol = "STN";
+
     // mapping the Star with the Owner Address
     mapping(uint256 => Star) public tokenIdToStarInfo;
     // mapping the TokenId and price
@@ -60,8 +65,8 @@ contract StarNotary is ERC721 {
         view
         returns (string memory)
     {
-        string memory _name;
-        return _name = tokenIdToStarInfo[_tokenId].name; //1. You should return the Star saved in tokenIdToStarInfo mapping
+        string memory _name = tokenIdToStarInfo[_tokenId].name;
+        return _name; //1. You should return the Star saved in tokenIdToStarInfo mapping
     }
 
     // Implement Task 1 Exchange Stars function

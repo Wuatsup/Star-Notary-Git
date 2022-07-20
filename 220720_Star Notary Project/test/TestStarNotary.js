@@ -85,8 +85,8 @@ it('can add the star name and star symbol properly', async() => {
     let user1 = accounts[1];
     await instance.createStar(StarName, starId, {from: user1});
 
-    let tName = await instance.name.call(starId);
-    let tSymbol = await instance.symbol.call(StarId);
+    let tName = await instance.name.call();
+    let tSymbol = await instance.symbol.call();
 
     assert.equal(tName, 'StarNotary');
     assert.equal(tSymbol, 'STN');
